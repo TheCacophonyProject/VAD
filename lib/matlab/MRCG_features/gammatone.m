@@ -39,4 +39,18 @@ end
 sig = reshape(in,sigLength,1);      % convert input to column vector
 
 % gammatone filtering using FFTFILT
-r = fftfilt(gt',repmat(sig,1,numChan))';
+
+[cols, rows] = size(gt);
+
+results = [];
+
+x = fftfilt(gt(1)',sig)';
+[one, features] = size(x);
+
+r = zeros([cols, features]);
+
+for col = 1:cols
+  r(col,:) = fftfilt(gt(col)',sig)';
+end
+
+

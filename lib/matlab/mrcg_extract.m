@@ -4,6 +4,13 @@ function [data_len, winlen, winstep] = mrcg_extract( audio_dir, varargin )
     %   자세한 설명 위치
     [noisy_speech, audio_sr] = audioread(audio_dir);
     
+    % take first channel on sterio audio.
+    if length(size(noisy_speech)) == 2
+      disp("Warning: Stereo audio, using first channel.");
+      noisy_speech = noisy_speech(:,1);
+    end
+  
+    
     if isempty(varargin)
         y_label = zeros(length(noisy_speech), 1);
     else
