@@ -6,7 +6,7 @@ function [data_len, winlen, winstep] = mrcg_extract( audio_dir, varargin )
     
     % take first channel on sterio audio.
     if length(size(noisy_speech)) == 2
-      disp("Warning: Stereo audio, using first channel.");
+      disp('Warning: Stereo audio, using first channel.');
       noisy_speech = noisy_speech(:,1);
     end
   

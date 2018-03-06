@@ -8,8 +8,8 @@ addpath(genpath('./lib'));
 
 % audio_dir = './data/clean/clean_speech.wav';
 % audio_dir = './data/example/SNR103F3MIC021001_ch01.wav';
-# audio_dir = './data/voice/t2_1step_1_VOICE_16khz.wav';
-audio_dir = './data/novoice/t4_3steps_NOVOICE_16khz.wav';
+audio_dir = './data/voice/t2_1step_1_VOICE_16khz.wav';
+% audio_dir = './data/novoice/t4_3steps_NOVOICE_16khz.wav';
 
 mode = 2;           % 0 : ACAM3, 1 : bDNN, 2 : DNN, 3 : LSTM
 threshold = 0.4;    % threshold for hard decision
